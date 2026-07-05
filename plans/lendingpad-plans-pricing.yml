@@ -1,0 +1,65 @@
+aid: lendingpad
+name: LendingPad Plans & Pricing
+description: >-
+  Publicly reported pricing for LendingPad's cloud mortgage loan origination
+  system, organized by product edition. LendingPad does not publish an official
+  price list; the figures below are aggregated from third-party review sites and
+  LendingPad's own pricing explainer blog and should be treated as indicative,
+  not quoted. API access is not sold as a self-serve product - it is gated to
+  Lender Edition clients under an executed API Agreement, with fees that vary by
+  integration complexity and support billed at LendingPad's standard support
+  rate.
+currency: USD
+source: https://blog.lendingpad.com/loan-origination-system-software-pricing
+sourceNote: >-
+  Figures aggregated from LendingPad's pricing blog, Capterra, G2, SaaSworthy,
+  and The LOS Directory. Ranges reflect third-party reporting as of 2026-07-04
+  and may not match current LendingPad quotes.
+plans:
+- name: Broker Edition
+  model: per user / per month
+  priceRange: $40-$55 per user/month (some sources report up to $100)
+  includes:
+  - Core LOS functionality
+  - Compliance
+  - Complimentary point-of-sale (POS)
+  - Wholesale integration
+  - Marketplace integrations
+- name: Lender Edition
+  model: per closed loan (success-linked flat fee)
+  priceRange: $100-$200 per closed loan
+  includes:
+  - Secondary, funding, and post-closing functions
+  - Unlimited users
+  - Banking and warehousing functions
+  - Third-party channel administration
+  - Enterprise API access (gated, API Agreement required)
+- name: Processing Edition
+  model: back-office / per seat
+  priceRange: Quote on request
+  includes:
+  - Single sign-on for back-office teams
+  - Multi-client pipeline task segmentation
+  - Processor / manager / closer / funder / post-closer roles
+- name: Institution Edition
+  model: enterprise
+  priceRange: Quote on request
+  includes:
+  - All Broker and Lender edition features
+  - Full network access and unlimited users
+  - Document management
+  - Retail, direct, wholesale, and correspondent channels
+addOns:
+- Custom eSign documents and disclosures
+- Document vendor integration
+- Extended / phone support (billed at standard support rate)
+- Broker/lender hybrid configuration (applicable lender fees)
+apiAccess:
+  model: gated / contract-based
+  eligibility: Lender Edition clients
+  requirements:
+  - Executed API Agreement
+  - NDA prior to evaluation
+  - Support-desk-issued API keys and testing-site access
+  fees: Varies by integration complexity; dedicated support billed at standard support rate
+  publicPortal: false

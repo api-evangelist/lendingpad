@@ -1,0 +1,91 @@
+aid: lendingpad
+name: LendingPad
+review:
+  question: Does LendingPad expose a documented public WebSocket API?
+  answer: false
+  date: '2026-07-04'
+  reviewer: API Evangelist
+  asyncapiSpecCreated: false
+  asyncapiScopeNote: |
+    No AsyncAPI document was authored. LendingPad publishes no public API
+    reference at all - and specifically no WebSocket (ws:// / wss://) or
+    server-push transport - so there is nothing documented to model. LendingPad
+    is a cloud mortgage loan origination system (LOS) whose integrations are
+    delivered through a gated, partner-only Enterprise API and a curated
+    Partners Marketplace. Any realtime-feeling behavior (field, critical-date,
+    and loan-status synchronization seen in partner integrations such as Shape)
+    appears to be implemented over request/response HTTP data exchange and
+    polling, not a documented public WebSocket surface.
+findings:
+  summary: |
+    LendingPad does not publish a documented public WebSocket API. In fact
+    LendingPad publishes no public, self-serve developer API of any kind.
+    LendingPad is a cloud-based mortgage LOS (founded 2015, McLean, VA). It
+    exposes an "Enterprise API" for loan-data exchange, but access is gated:
+    the API Terms restrict it to Lender Edition clients, require an executed
+    API Agreement and an NDA before evaluation, and route key issuance,
+    testing-site access, and documentation through the support desk. There is
+    no public developer portal, no public API reference, and no published
+    endpoint list, base URL, or authentication spec. Integration is delivered
+    largely through the Partners Marketplace (credit, AUS, AVM/appraisal, title,
+    compliance, doc-prep, pricing/PPE, POS, CRM, and investors like Fannie Mae,
+    Freddie Mac, UWM, Rocket Mortgage). Partner integrations describe MISMO-style
+    3.2/3.4 loan-data exchange and import/export throttled to 30-minute
+    intervals. No WebSocket, SSE, or other server-push transport is documented.
+  accessModel: |
+    Gated / contract-based partner API. Not open, not self-serve. Requires
+    Lender Edition, an executed API Agreement, and an NDA. API keys and testing
+    access are provisioned manually by the LendingPad support desk. Fees vary by
+    integration complexity, and LendingPad reserves the right to require a
+    qualified contractor when a developer or vendor is deemed unqualified.
+  openSource: |
+    None. LendingPad is a proprietary, closed-source commercial SaaS LOS. No
+    public SDKs, no public source repositories, and no public OpenAPI/AsyncAPI
+    descriptions are available.
+  transports:
+    - protocol: REST / HTTP
+      scheme: https
+      documented: false
+      note: An Enterprise API for loan-data exchange exists but is gated; no public endpoint reference, base URL, or auth spec is published.
+    - protocol: File / MISMO data exchange
+      scheme: https
+      documented: false
+      note: Partner integrations (e.g. Floify) describe MISMO 3.2/3.4 loan-data file sync into the LOS; format details are shared only under the partner agreement.
+    - protocol: WebSocket
+      scheme: wss
+      documented: false
+      note: No WebSocket endpoint is documented anywhere in LendingPad's public materials as of the review date.
+  endpointsConfirmedRest: []
+  endpointsModeled:
+    - Loans / loan-file create, read, update, and lender/investor submission (modeled)
+    - Documents & conditions push and disclosure/eSign handling (modeled)
+    - Product, pricing, and eligibility (PPE) exchange (modeled)
+    - Field / critical-date / loan-status change notifications (modeled)
+sources:
+  - url: https://lendingpad.com/api-terms
+    type: Documentation
+    note: API Terms - gated to Lender Edition, API Agreement + NDA required, support-desk key issuance, 30-minute import/export cap, complexity-based fees. No endpoint reference.
+  - url: https://lendingpad.com/partners-marketplace
+    type: PartnerProgram
+    note: Partners Marketplace and Become-a-Partner program; integration categories and 100+ vendors. No technical API docs.
+  - url: https://kb.lendingpad.com/integrations
+    type: Documentation
+    note: Integrations knowledge base (Rocket Mortgage, UWM, DocMagic, Optifunder, LoanNex, title). No data-format or endpoint specs published.
+  - url: https://lendingpad.com/solutions
+    type: Documentation
+    note: Product editions; Lender Edition explicitly lists "Enterprise API access".
+  - url: https://blog.lendingpad.com/loan-origination-system-software-pricing
+    type: Pricing
+    note: Edition-based LOS pricing (per user/month for Broker, per closed loan for Lender).
+actions:
+  asyncapiPath: null
+  apisYmlUpdated: true
+  reason: |
+    No WebSocket surface exists to model, and LendingPad publishes no public API
+    reference at all. The apis.yml documents LendingPad honestly as a gated,
+    partner-only API: the listed API entries are explicitly modeled from
+    publicly described marketplace and partner-integration capabilities and are
+    flagged endpointsModeled: true. No OpenAPI, AsyncAPI, rate-limit, or FinOps
+    artifacts were fabricated because no sourced endpoint-level detail is public.
+    A Plans file was included because edition pricing is reported by third parties
+    and LendingPad's own pricing explainer.

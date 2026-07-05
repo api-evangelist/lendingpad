@@ -1,0 +1,121 @@
+aid: lendingpad
+url: https://raw.githubusercontent.com/api-evangelist/lendingpad/refs/heads/main/apis.yml
+name: LendingPad
+kind: company
+description: LendingPad is a cloud-based mortgage loan origination system (LOS) that
+  lets brokers, lenders, and institutions originate, process, underwrite, close, and
+  fund residential mortgage loans with real-time, multi-user collaboration across
+  the borrower, broker, lender, and service-provider lifecycle. It ships in Broker,
+  Lender, Processing, and Institution editions and runs a large Partners Marketplace
+  of integrated vendors (credit, AUS, AVM/appraisal, title, compliance, doc-prep,
+  pricing/PPE, POS, CRM, and investors such as Fannie Mae, Freddie Mac, UWM, and
+  Rocket Mortgage). LendingPad exposes an Enterprise API for loan data exchange, but
+  access is gated - it is limited to Lender Edition clients under an executed API
+  Agreement and NDA, keys and testing-site access are issued by the support desk,
+  and there is no public developer portal or self-serve API reference. The API
+  entries below are honestly modeled from the vendor-integration and marketplace
+  capabilities LendingPad describes publicly; endpoint-level surfaces are not
+  published and are not fabricated here.
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+tags:
+- Mortgage
+- Loan Origination System
+- LOS
+- Lending
+- FinTech
+- Financial Services
+- Real Estate
+- Partner API
+- Gated API
+created: '2026-07-04'
+modified: '2026-07-04'
+specificationVersion: '0.19'
+apis:
+- aid: lendingpad:lendingpad-loans-api
+  name: LendingPad Loans API (modeled)
+  tags:
+  - Loans
+  - Loan Files
+  - MISMO
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://lendingpad.com/partners-marketplace
+  properties:
+  - url: https://lendingpad.com/api-terms
+    type: Documentation
+  - url: https://lendingpad.com/partners-marketplace
+    type: PartnerProgram
+  endpointsModeled: true
+  description: Modeled loan-file exchange surface - create, read, and update mortgage
+    loan files, submit loan data to lenders/investors, and import/export loan data
+    (LendingPad describes MISMO-style 3.2/3.4 loan-data exchange with partners, with
+    import/export throttled to 30-minute intervals per the API Terms). No public
+    endpoint reference is published; access is gated to Lender Edition clients under
+    an executed API Agreement.
+- aid: lendingpad:lendingpad-documents-conditions-api
+  name: LendingPad Documents & Conditions API (modeled)
+  tags:
+  - Documents
+  - Conditions
+  - eSign
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://lendingpad.com/partners-marketplace
+  properties:
+  - url: https://lendingpad.com/api-terms
+    type: Documentation
+  - url: https://kb.lendingpad.com/integrations
+    type: Documentation
+  endpointsModeled: true
+  description: Modeled document and condition exchange surface - push borrower and
+    loan documents into the LendingPad LOS (as POS/doc-prep partners like Floify and
+    DocMagic do) and manage underwriting conditions and disclosures. Publicly
+    described as a partner capability; no documented endpoints. Gated access.
+- aid: lendingpad:lendingpad-pricing-eligibility-api
+  name: LendingPad Pricing & Product Eligibility API (modeled)
+  tags:
+  - Pricing
+  - Product Eligibility
+  - PPE
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://lendingpad.com/partners-marketplace
+  properties:
+  - url: https://lendingpad.com/partners-marketplace
+    type: PartnerProgram
+  endpointsModeled: true
+  description: Modeled product, pricing, and eligibility (PPE) exchange surface -
+    integrations with pricing engines such as Polly, Lender Price, Optimal Blue, and
+    LoanNex return real-time product and pricing results into the loan file.
+    Delivered as marketplace integrations rather than a public developer API.
+- aid: lendingpad:lendingpad-webhooks-events-api
+  name: LendingPad Webhooks & Events (modeled)
+  tags:
+  - Webhooks
+  - Events
+  - Loan Status
+  image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+  humanURL: https://lendingpad.com/partners-marketplace
+  properties:
+  - url: https://lendingpad.com/api-terms
+    type: Documentation
+  endpointsModeled: true
+  description: Modeled event/notification surface - partner integrations describe
+    synchronization of field updates, critical dates, and loan-status changes back
+    to external systems (e.g. Shape's bi-directional sync). No public webhook or
+    event reference is documented; behavior is inferred from partner integrations.
+common:
+- type: Website
+  url: https://lendingpad.com
+- type: LinkedIn
+  url: https://www.linkedin.com/company/lendingpad
+- type: Documentation
+  url: https://lendingpad.com/api-terms
+- type: PartnerProgram
+  url: https://lendingpad.com/partners-marketplace
+- type: KnowledgeBase
+  url: https://kb.lendingpad.com/integrations
+- type: Blog
+  url: https://blog.lendingpad.com
+- type: Plans
+  url: plans/lendingpad-plans-pricing.yml
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com
