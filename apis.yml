@@ -102,6 +102,10 @@ apis:
     to external systems (e.g. Shape's bi-directional sync). No public webhook or
     event reference is documented; behavior is inferred from partner integrations.
 common:
+- type: TrustCenter
+  url: security/lendingpad-trust-center.yml
+- type: DomainSecurity
+  url: security/lendingpad-domain-security.yml
 - type: Website
   url: https://lendingpad.com
 - type: LinkedIn

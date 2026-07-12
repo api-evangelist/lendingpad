@@ -1,0 +1,12 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://trust.lendingpad.com/
+url: https://trust.lendingpad.com/
+certifications:
+- SOC 2
+evidence:
+- source: https://trust.lendingpad.com/
+  keywords:
+  - soc 2
+  - trust center
