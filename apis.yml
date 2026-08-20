@@ -34,6 +34,16 @@ tags:
 - Loan Origination System
 - LOS
 - Lending
+- Fintech
+- Financial-Services
+- Real-Estate
+- Partner API
+- Gated API
+tags_raw:
+- Mortgage
+- Loan Origination System
+- LOS
+- Lending
 - FinTech
 - Financial Services
 - Real Estate
@@ -100,6 +110,10 @@ apis:
 - aid: lendingpad:lendingpad-webhooks-events-api
   name: LendingPad Webhooks & Events (modeled)
   tags:
+  - Webhook
+  - Event
+  - Loan Status
+  tags_raw:
   - Webhooks
   - Events
   - Loan Status
