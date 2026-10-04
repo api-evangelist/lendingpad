@@ -46,8 +46,8 @@ tags:
 - LOS
 - Lending
 - Fintech
-- Financial-Services
-- Real-Estate
+- Financial Services
+- Real Estate
 - Partner API
 - Gated API
 tags_raw:
@@ -60,6 +60,8 @@ tags_raw:
 - Real Estate
 - Partner API
 - Gated API
+- Financial-Services
+- Real-Estate
 created: '2026-07-04'
 modified: '2026-07-04'
 specificationVersion: '0.23'
