@@ -2,6 +2,13 @@
   "repo": "lendingpad",
   "feeds": [
     {
+      "source": "https://blog.lendingpad.com",
+      "feed_url": "https://blog.lendingpad.com/rss.xml",
+      "title": "",
+      "saved": 0,
+      "method": "discovered"
+    },
+    {
       "source": "https://kb.lendingpad.com/integrations",
       "feed_url": "https://kb.lendingpad.com/integrations",
       "title": "",
@@ -10,5 +17,5 @@
     }
   ],
   "post_count": 0,
-  "fetched": "2026-10-03T12:30:02Z"
+  "fetched": "2026-10-10T13:15:00Z"
 }
