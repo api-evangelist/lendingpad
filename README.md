@@ -1,4 +1,4 @@
-# LendingPad (lendingpad)
+# LendingPad
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -64,94 +64,95 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-LendingPad is a cloud-based mortgage loan origination system (LOS) that lets brokers, lenders, and institutions originate, process, underwrite, close, and fund residential mortgage loans with real-time, multi-user collaboration across the borrower, broker, lender, and service-provider lifecycle. It ships in Broker, Lender, Processing, and Institution editions and runs a large Partners Marketplace of integrated vendors (credit, AUS, AVM/appraisal, title, compliance, doc-prep, pricing/PPE, POS, CRM, and investors such as Fannie Mae, Freddie Mac, UWM, and Rocket Mortgage). Founded in 2015 and headquartered in McLean, Virginia.
+LendingPad is a cloud-based mortgage loan origination system (LOS) that lets brokers, lenders, and institutions originate, process, underwrite, close, and fund residential mortgage loans with real-time, multi-user collaboration across the borrower, broker, lender, and service-provider lifecycle. It ships in Broker, Lender, Processing, and Institution editions and runs a large Partners Marketplace of integrated vendors (credit, AUS, AVM/appraisal, title, compliance, doc-prep, pricing/PPE, POS, CRM, and investors such as Fannie Mae, Freddie Mac, UWM, and Rocket Mortgage). LendingPad exposes an Enterprise API for loan data exchange, but access is gated - it is limited to Lender Edition clients under an executed API Agreement and NDA, keys and testing-site access are issued by the support desk, and there is no public developer portal or self-serve API reference. The API entries below are honestly modeled from the vendor-integration and marketplace capabilities LendingPad describes publicly; endpoint-level surfaces are not published and are not fabricated here.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/lendingpad/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/lendingpad/refs/heads/main/apis.yml)
+**Areas:** Mortgage · Loan Origination System · LOS · Lending · Fintech · Financial Services · Real Estate · Partner API · Gated API
 
-## API access model — gated / partner-only
+## LendingPad on APIs.io
 
-This entry is intentionally an **honest gated stub**. LendingPad does **not** publish a public, self-serve developer API. It exposes an **Enterprise API** for loan-data exchange, but per its [API Terms](https://lendingpad.com/api-terms):
+Everything profiled for LendingPad is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/lendingpad/](https://apis.io/providers/lendingpad/)** — or go straight to one of the APIs or properties below.
 
-- Access is limited to **Lender Edition** clients.
-- An **executed API Agreement** and an **NDA** are required before evaluation/development.
-- **API keys and testing-site access** are provisioned manually by the LendingPad support desk.
-- Fees vary by **integration complexity**; dedicated support is billed at LendingPad's standard support rate.
-- Import/export is throttled (reported ~30-minute intervals).
-- LendingPad reserves the right to require a **qualified contractor** if a developer/vendor is deemed unqualified.
+### APIs (4)
 
-There is **no public developer portal, no public API reference, and no published endpoint list, base URL, or authentication spec.** Most integration happens through the curated [Partners Marketplace](https://lendingpad.com/partners-marketplace). Partner integrations describe MISMO-style 3.2/3.4 loan-data exchange into the LOS.
+- [LendingPad Loans API (modeled)](https://apis.io/apis/lendingpad/lendingpad-loans-api/) — Modeled loan-file exchange surface - create, read, and update mortgage loan files, submit loan data to lenders/investors, and import/export loan data…
+- [LendingPad Documents & Conditions API (modeled)](https://apis.io/apis/lendingpad/lendingpad-documents-conditions-api/) — Modeled document and condition exchange surface - push borrower and loan documents into the LendingPad LOS (as POS/doc-prep partners like Floify and…
+- [LendingPad Pricing & Product Eligibility API (modeled)](https://apis.io/apis/lendingpad/lendingpad-pricing-eligibility-api/) — Modeled product, pricing, and eligibility (PPE) exchange surface - integrations with pricing engines such as Polly, Lender Price, Optimal Blue, and LoanNex…
+- [LendingPad Webhooks & Events (modeled)](https://apis.io/apis/lendingpad/lendingpad-webhooks-events-api/) — Modeled event/notification surface - partner integrations describe synchronization of field updates, critical dates, and loan-status changes back to…
 
-The API entries below are **modeled** from publicly described marketplace and partner-integration capabilities (flagged `endpointsModeled: true` in `apis.yml`). No endpoint-level surface, OpenAPI, or AsyncAPI has been fabricated.
+### Published properties
 
-## Tags
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-- Mortgage
-- Loan Origination System
-- LOS
-- Lending
-- FinTech
-- Financial Services
-- Real Estate
-- Partner API
-- Gated API
+#### Security (2)
 
-## Timestamps
+Authentication, trust centre, and vulnerability disclosure.
 
-- **Created:** 2026-07-04
-- **Modified:** 2026-07-04
+- [Lendingpad Domain Security](https://apis.io/security/lendingpad/lendingpad-domain-security/)
+- [Lendingpad Trust Center](https://apis.io/security/lendingpad/lendingpad-trust-center/)
 
-## APIs (modeled)
+#### Plans and pricing (1)
 
-### LendingPad Loans API (modeled)
+Published plans, tiers and prices.
 
-Loan-file exchange — create, read, and update mortgage loan files, submit loan data to lenders/investors, and import/export loan data (MISMO-style 3.2/3.4). No public endpoint reference; gated to Lender Edition under an executed API Agreement.
+- [Lendingpad Plans Pricing](https://apis.io/plans/lendingpad/lendingpad-plans-pricing/)
 
-- **Human URL:** [https://lendingpad.com/partners-marketplace](https://lendingpad.com/partners-marketplace)
+## Where to find this API
 
-### LendingPad Documents & Conditions API (modeled)
-
-Document and condition exchange — push borrower/loan documents into the LOS (as Floify and DocMagic do) and manage underwriting conditions, disclosures, and eSign. Publicly described as a partner capability; no documented endpoints.
-
-- **Human URL:** [https://lendingpad.com/partners-marketplace](https://lendingpad.com/partners-marketplace)
-
-### LendingPad Pricing & Product Eligibility API (modeled)
-
-Product, pricing, and eligibility (PPE) exchange — integrations with pricing engines such as Polly, Lender Price, Optimal Blue, and LoanNex return real-time product/pricing results into the loan file. Delivered as marketplace integrations rather than a public developer API.
-
-- **Human URL:** [https://lendingpad.com/partners-marketplace](https://lendingpad.com/partners-marketplace)
-
-### LendingPad Webhooks & Events (modeled)
-
-Event/notification surface — partner integrations describe synchronization of field updates, critical dates, and loan-status changes back to external systems (e.g. Shape's bi-directional sync). No public webhook/event reference is documented.
-
-- **Human URL:** [https://lendingpad.com/partners-marketplace](https://lendingpad.com/partners-marketplace)
-
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://lendingpad.com)
-- [LinkedIn](https://www.linkedin.com/company/lendingpad)
-- [Documentation (API Terms)](https://lendingpad.com/api-terms)
-- [Partner Program](https://lendingpad.com/partners-marketplace)
-- [Knowledge Base](https://kb.lendingpad.com/integrations)
+- [Documentation](https://lendingpad.com/api-terms)
 - [Blog](https://blog.lendingpad.com)
-- [Plans](plans/lendingpad-plans-pricing.yml)
 
-## Plans & Pricing
+## API Evangelist rating
 
-LendingPad does not publish an official price list. Indicative, third-party-reported pricing by edition:
+**Kin Score 11.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-- **Broker Edition:** ~$40–$55 per user/month (some sources up to $100); core LOS, compliance, POS, wholesale integration.
-- **Lender Edition:** ~$100–$200 per closed loan (success-linked); unlimited users, secondary/funding/post-closing, **Enterprise API access** (gated).
-- **Processing Edition:** quote on request; back-office roles and multi-client pipelines.
-- **Institution Edition:** quote on request; all features, full network access, all channels.
+| Facet | Score |
+|---|---|
+| Discoverability | 62.5 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 11.9 |
+| Access clarity | 15.8 |
 
-See [`plans/lendingpad-plans-pricing.yml`](plans/lendingpad-plans-pricing.yml). API access is not sold as a self-serve product.
+**Agent readiness 0.0** — human-only
 
-## Review
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
 
-Does LendingPad expose a documented public WebSocket API? **No.** See [`review.yml`](review.yml). LendingPad publishes no public API reference at all — and specifically no WebSocket or server-push transport.
+**Regulatory alignment 10.8** — Horizontal (data, software, accessibility, platform)
 
-## Maintainers
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/lendingpad/](https://apis.io/providers/lendingpad/).
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for LendingPad: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/lendingpad/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
